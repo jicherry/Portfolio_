@@ -1,0 +1,117 @@
+:root {
+  --bg: #000;
+  --active: #ffffff;
+  --inactive: #515151;
+}
+
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background: var(--bg);
+  color: var(--active);
+  height: 100%;
+  overflow: hidden;
+  font-family: "Montserrat", sans-serif;
+  /* font-family: "Yellowtail", cursive; */
+
+}
+
+
+/* 오른쪽 메뉴 */
+
+.menu {
+  position: fixed;
+  right: 4.5%;
+  top: 65%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.5rem;
+}
+
+.menu .item {
+  font-size: 5rem;
+  font-weight: 600;
+  color: var(--inactive);
+  cursor: pointer;
+  transition: all 0.5s ease;
+}
+
+.menu .item.active {
+  color: var(--active);
+  transform: translateX(0);
+  opacity: 1;
+}
+
+.menu .item.inactive {
+  transform: translateX(5vw);
+  opacity: 0.4;
+}
+
+/* 섹션 스타일 */
+
+section {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding-left: 0rem;
+  box-sizing: border-box;
+  transition: opacity 0.5s ease;
+}
+
+.section-content {
+  max-width: 1000px;
+  padding: 2rem;
+  position: absolute;
+  top: 5%;
+}
+
+#section0 {
+  border: 1.5px solid #515151;
+  border-left: 0;
+  border-top-right-radius: 20rem;  
+  border-bottom-right-radius: 20rem;
+  padding: 1rem;
+  width: 60%;
+}
+
+#section0 h2 {
+  font-size: 7rem;
+  font-weight: 500;
+  margin: 0;
+  transform: translate(-0.5rem);
+}
+
+#section0 h5 {
+  font-size: 2.7rem;
+  font-weight: 500;
+  margin: 0;
+}
+
+#section0 p {
+  font-size: 0.9rem;
+  font-weight: bold;
+  font-weight: 500;
+  font-style: normal;
+  color: var(--inactive);
+  letter-spacing: 0.1rem;
+  line-height: 1.5rem;
+}
+
+.visit {
+  cursor: pointer;
+  color: var(--inactive);
+  font-size: 1rem;  
+  display: inline-block;
+  margin-top: 10rem;
+}
+
+.visit:hover {
+  color: var(--active);
+}
+
+
