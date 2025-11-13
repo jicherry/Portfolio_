@@ -56,3 +56,30 @@ window.addEventListener('wheel', (e) => {
 
 // 처음 페이지 로드 시 첫 번째 섹션을 보이도록 설정
 setActive(0);
+
+
+// Hello! 효과
+gsap.fromTo(
+  "#section0 h2",
+  {
+    y: -200,   
+    opacity: 0,
+  },
+  {
+    y: 0,          
+    opacity: 1,
+    duration: 1.2,  
+    ease: "bounce.out", 
+    delay: 0.3,
+  }
+);
+
+// SVG 아이콘 효과
+gsap.to("svg", {
+  y: -10,                
+  duration: 0.7,          
+  yoyo: true,             
+  repeat: -1,             
+  ease: "easeInOut",    
+});
+
