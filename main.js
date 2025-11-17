@@ -58,22 +58,6 @@ window.addEventListener('wheel', (e) => {
 setActive(0);
 
 
-// Hello! 효과
-gsap.fromTo(
-  "#section0 h2",
-  {
-    y: -200,   
-    opacity: 0,
-  },
-  {
-    y: 0,          
-    opacity: 1,
-    duration: 1.2,  
-    ease: "bounce.out", 
-    delay: 0.3,
-  }
-);
-
 // SVG 아이콘 효과
 gsap.to("svg", {
   y: -10,                
@@ -82,4 +66,51 @@ gsap.to("svg", {
   repeat: -1,             
   ease: "easeInOut",    
 });
+
+// Skill 부분 & Hello! 부분
+function setActive(index) {
+  currentIndex = index;
+
+  // 메뉴 상태
+  menuItems.forEach((item, i) => {
+    item.classList.toggle('active', i === index);
+    item.classList.toggle('inactive', i !== index);
+  });
+
+  // 섹션 보이기 / 숨기기
+  sections.forEach((section, i) => {
+    section.style.display = (i === index) ? 'flex' : 'none';
+  });
+
+  // Hello 활성화될 때 매번 애니메이션 실행
+  if (index === 0) {
+    gsap.fromTo(
+      "#main-section h2",
+      {
+        y: -200,
+        opacity: 0
+      },
+      {
+        y: 0,
+        opacity: 1,
+        duration: 1,
+        ease: "bounce.out",
+        delay: 0.2
+      }
+    );
+  }
+
+  // About Me 섹션 활성화될 때 skills 등장
+  if (index === 1) {
+    gsap.from(".skills p", {
+      y: 50,
+      opacity: 0,
+      duration: 0.8,
+      ease: "power3.out",
+      stagger: 0.2
+    });
+  }
+
+  scrollToSection(index);
+}
 
