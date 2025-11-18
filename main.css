@@ -1,9 +1,8 @@
 :root {
   --bg: #000;
   --active: #ffffff;
-  --inactive: #676767f3;
+  --inactive: #6d6d6d;
 }
-
 
 html, body {
   margin: 0;
@@ -15,6 +14,11 @@ html, body {
   font-family: "Montserrat", sans-serif;
   box-sizing: border-box;
   max-width: 1500px;
+}
+
+a {
+  text-decoration: none;
+  display: block;
 }
 
 /* 메뉴 */
@@ -93,7 +97,7 @@ svg {
   font-weight: bold;
   font-weight: 500;
   font-style: normal;
-  color: #636363;
+  color: var(--inactive);
   letter-spacing: 0.1rem;
   line-height: 2.2rem;
   margin-top: 2rem;
@@ -101,7 +105,7 @@ svg {
 
 .visit {
   cursor: pointer;
-  color: #636363;
+  color: var(--inactive);
   font-size: 1.2rem;  
   display: inline-block;
   margin-top: 0.7rem;
@@ -111,39 +115,74 @@ svg {
   color: var(--active);
 }
 
-/* 섹션1 */
-
 .section-content {
-  text-align: center;
+  position: absolute;
+  top: 20%;
+  left: 5%;
   width: 100%;
   max-width: 900px;
-  margin-top: 3rem;
 }
 
-.section-content p {
+/* 섹션1 */
+
+#section1 .section-content {
+  display: flex;
+  align-items: center;
+  gap: 6rem;
+}
+
+.text-box > p {
   line-height: 2rem;
-  margin-top: 1.5rem;
+  background-color: #1a1a1a;
+  border-radius: 2rem;
+  padding: 2.2rem 2.5rem;
+}
+
+.text-box h1 {
+  padding-left: 0.8rem;
 }
 
 .skills {
   display: flex;
-  justify-content: center;
-  gap: 1.5rem;
-  margin-top: 2rem; 
+  flex-direction: column;
+  gap: 1.3rem;
+  margin-top: 3.9rem;
 }
 
 .skills p {
-  display: flex;    
-  justify-content: center;
-  align-items: center;
-  width: 8rem;       
-  height: 8rem; 
+  font-size: 1.1rem;
+  margin: 0;
   font-weight: bold;
-  border: 2px solid var(--inactive);
-  border-radius: 50%;
-  background-color: #30303090;
+  border-radius: 1rem;
+  background-color: #1a1a1a;
+  color: #c1c1c1;
+  padding: 0.8rem 0.35rem;
+  text-align: center;
 }
 
+
+/* 섹션2 */
+
+.project-box h1 {
+  padding-left: 0.8rem;
+}
+
+.project-wrap {
+  display: flex;
+  gap: 1.2rem;
+}
+
+.project-wrap div {
+  height: 17rem;
+  background-color: #1a1a1a;
+  border-radius: 2rem;
+  padding: 0 1.2rem;
+  transition: transform 0.28s cubic-bezier(.25, .46, .45, 1.2);
+}
+
+.project-wrap div:hover {
+  transform: translateY(-6px);
+}
 
 
 
