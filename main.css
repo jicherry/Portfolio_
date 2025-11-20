@@ -187,9 +187,10 @@ svg {
   transition: transform 0.28s cubic-bezier(.25, .46, .45, 1.2);
 }
 
-.project-wrap div:hover {
+/* .project-wrap div:hover {
   transform: translateY(-6px);
-}
+} */
+
 
 .project-wrap h2 {
   margin: 0;
@@ -241,8 +242,6 @@ svg {
   font-size: 1.8rem;
   line-height: 3rem;
 }
-
-
 
 
 

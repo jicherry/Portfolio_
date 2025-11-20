@@ -66,7 +66,7 @@ function animateSection(index) {
     gsap.fromTo(
       projectItems,
       { y: 50, opacity: 0 },
-      { y: 0, opacity: 1, duration: 0.8, ease: "power3.out", stagger: 0.2 }
+      { y: 0, opacity: 1, duration: 0.8, ease: "power3.out", stagger: 0.2}
     );
   }
 }
