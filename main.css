@@ -91,17 +91,15 @@ svg {
   font-weight: bold;
   margin: 0;
   padding: 1.2rem 0.5rem;
-  /* background-color: rgb(27, 52, 195); */
-  background-color: #EBFF6A;
-  color: var(--bg);
+  background-color: rgb(27, 52, 195);
+  /* background-color: #EBFF6A; */
   border-radius: 30rem;
 }
 
 #main-section p {
   font-size: 1.2rem;
   font-weight: 500;
-  font-style: normal;
-  color: var(--active);
+  color: var(--inactive);
   letter-spacing: 0.1rem;
   line-height: 2.2rem;
   margin-top: 2.1rem;
@@ -129,6 +127,7 @@ svg {
   width: 100%;
   max-width: 830px;
 }
+
 
 /* 섹션1 */
 
@@ -178,56 +177,61 @@ svg {
   gap: 1.2rem;
 }
 
-.project-wrap div {
-  width: 100%;
-  height: 17rem;
-  background-color: #1a1a1a;
-  border-radius: 1.1rem;
-  padding: 0 1rem;
-  transition: transform 0.28s cubic-bezier(.25, .46, .45, 1.2);
-}
-
-/* .project-wrap div:hover {
-  transform: translateY(-6px);
-} */
-
-
 .project-wrap h2 {
   margin: 0;
   padding: 0.9rem 0.1rem;
 }
 
-.project-wrap p {
-  font-weight: bold;
-  margin-top: 0;
-  font-size: 1.1rem;
+.project-wrap div {
+  width: 100%;
+  height: 17rem;
+  border-radius: 1.1rem;
+  padding: 0 1rem;
+  transition: transform 0.28s cubic-bezier(.25,.46,.45,1.2), filter 0.3s ease;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  filter: grayscale(100%);
 }
 
-.project-wrap a:nth-child(1) {
-  display: flex;
-  justify-content: center;  
-  align-items: center;
-  font-size: 0.9rem;
-  font-weight: bold;
-  background-color: #EBFF6A;
-  color: var(--bg);
-  border-radius: 30rem;
-  padding: 0.7rem 0;
-  margin-top: 0.7rem;
+.project-wrap div:hover {
+  filter: grayscale(0%);
+  transform: scale(1.05);
 }
+
+.project1 { background-image: url('img/taebeenbio.jpg'); }
+.project2 { background-image: url('img/noblesse.jpg'); }
+.project3 { background-image: url('img/memoryGame.jpg'); }
+.project4 { background-image: url('img/longines.PNG'); }
+.project5 { background-image: url('img/longines.PNG'); }
+
 
 .fa-solid {
   margin-top: 0.2rem
 }
 
-.project-wrap a {
+.project-wrap a:nth-of-type(1) {
   display: flex;
   justify-content: center;  
-  align-items: flex-end;
-  font-size: 0.9rem;
-  font-weight: 500;
+  align-items: center;
+  font-size: 1rem;
+  font-weight: bold;
   color: var(--active);
-  margin-bottom: 7.2rem;
+  margin-top: 4.5rem;
+}
+
+.project-wrap a:nth-of-type(2) {
+  display: flex;
+  justify-content: center;  
+  align-items: center;
+  font-size: 0.9rem;
+  font-weight: bold;
+  color: var(--active);
+  margin-top: 9rem;
+  border-radius: 1rem;
+  background-color: #1a1a1a;
+  padding: 0.8rem 0.35rem;
+
 }
 
 
@@ -238,11 +242,20 @@ svg {
   padding-left: 0.8rem;
 }
 
+
 #section3 p {
-  font-size: 1.8rem;
-  line-height: 3rem;
+  font-size: 1.3rem;
+  font-weight: 500;
+  margin: 0;
 }
 
+#section3 h3 {
+  font-size: 1.2rem;
+  color: var(--inactive);
+  margin-top: 17.3rem;
+  border-bottom: 1px solid var(--inactive);
+  margin-left: 0.8rem;
+}
 
 
 

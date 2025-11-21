@@ -15,9 +15,17 @@ function setActive(index) {
     item.classList.toggle('inactive', i !== index);
   });
 
-  // 각 섹션 보이기/숨기기
+  // 섹션 보이기/숨기기 — (display 제거, opacity 전환으로 변경)
   sections.forEach((section, i) => {
-    section.style.display = (i === index) ? 'flex' : 'none';
+    if (i === index) {
+      section.style.opacity = "1";
+      section.style.pointerEvents = "auto";
+      section.style.visibility = "visible";
+    } else {
+      section.style.opacity = "0";
+      section.style.pointerEvents = "none";
+      section.style.visibility = "hidden";
+    }
   });
 
   // 해당 섹션 애니메이션 실행
@@ -40,7 +48,7 @@ function setActive(index) {
 function animateSection(index) {
   const section = sections[index];
 
-  // About Me - .text-box p만 애니메이션 (h1 제외)
+  // About Me - .text-box p만 애니메이션
   const textBoxParagraphs = section.querySelectorAll('.text-box p');
   if (textBoxParagraphs.length > 0) {
     gsap.fromTo(
@@ -50,7 +58,7 @@ function animateSection(index) {
     );
   }
 
-  // About Me - .skills p (하나씩 등장)
+  // About Me - .skills p
   const skills = section.querySelectorAll('.skills p');
   if (skills.length > 0) {
     gsap.fromTo(
@@ -60,13 +68,23 @@ function animateSection(index) {
     );
   }
 
-  // Projects - .project-wrap div (하나씩 등장)
+  // Projects - .project-wrap div
   const projectItems = section.querySelectorAll('.project-wrap div');
   if (projectItems.length > 0) {
     gsap.fromTo(
       projectItems,
       { y: 50, opacity: 0 },
-      { y: 0, opacity: 1, duration: 0.8, ease: "power3.out", stagger: 0.2}
+      { y: 0, opacity: 1, duration: 0.8, ease: "power3.out", stagger: 0.2 }
+    );
+  }
+
+  // Section3 - p와 h3 항상 아래에서 위로 등장
+  if (section.id === 'section3') {
+    const section3Elements = section.querySelectorAll('p, h3');
+    gsap.fromTo(
+      section3Elements,
+      { y: 50, opacity: 0 },
+      { y: 0, opacity: 1, duration: 0.8, ease: "power3.out", stagger: 0.2 }
     );
   }
 }
@@ -94,9 +112,9 @@ window.addEventListener('wheel', (e) => {
   if (isScrolling) return;
 
   if (e.deltaY > 0 && currentIndex < sections.length - 1) {
-    setActive(currentIndex + 1); // 아래로
+    setActive(currentIndex + 1);
   } else if (e.deltaY < 0 && currentIndex > 0) {
-    setActive(currentIndex - 1); // 위로
+    setActive(currentIndex - 1);
   }
 });
 
@@ -111,6 +129,3 @@ gsap.to("svg", {
   repeat: -1,
   ease: "easeInOut",
 });
-
-
-
