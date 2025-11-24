@@ -199,11 +199,11 @@ svg {
   transform: scale(1.05);
 }
 
-.project1 { background-image: url('img/taebeenbio.jpg'); }
+/* .project1 { background-image: url('img/taebeenbio.jpg'); }
 .project2 { background-image: url('img/noblesse.jpg'); }
 .project3 { background-image: url('img/memoryGame.jpg'); }
 .project4 { background-image: url('img/longines.PNG'); }
-.project5 { background-image: url('img/longines.PNG'); }
+.project5 { background-image: url('img/longines.PNG'); } */
 
 
 .fa-solid {
@@ -263,14 +263,11 @@ svg {
 
 @media screen and (max-width: 575.98px) {
   
-  .menu {
+  /* .menu {
     top: 70%;
     gap: 0.6rem;
-  }
+  } */
 
-  .menu .item {
-    font-size: 2rem;
-  }
 
   svg {
     display: block;
@@ -279,31 +276,12 @@ svg {
     padding-bottom: 1.5rem;
   }
 
-  #section0 h2 {
-    font-size: 3.8rem;
-    transform: translate(0.2rem);
 
-  }
-
-  #section0 span {
-    font-size: 1.5rem;
-    display: inline-block;
-  }
-  
-  #section0 p {
-    font-size: 1rem;
-    line-height: 1.2rem;
-    margin-top: 2rem;
-  }
   
   .visit {
     font-size: 1rem;  
     display: inline-block;
     margin-top: 0.2rem;
   }
-
- 
-
-  
 
 }
