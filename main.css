@@ -163,6 +163,7 @@ svg {
   background-color: #1a1a1a;
   padding: 0.8rem 0.35rem;
   text-align: center;
+  border: 1.5px solid var(--active);
 }
 
 
@@ -175,36 +176,21 @@ svg {
 .project-wrap {
   display: flex;
   gap: 1.2rem;
+  position: relative;
 }
 
-.project-wrap h2 {
+/* .project-wrap h2 {
   margin: 0;
   padding: 0.9rem 0.1rem;
-}
+} */
 
 .project-wrap div {
   width: 100%;
   height: 17rem;
   border-radius: 1.1rem;
   padding: 0 1rem;
-  transition: transform 0.28s cubic-bezier(.25,.46,.45,1.2), filter 0.3s ease;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  filter: grayscale(100%);
+  background-color: #1a1a1a;
 }
-
-.project-wrap div:hover {
-  filter: grayscale(0%);
-  transform: scale(1.05);
-}
-
-/* .project1 { background-image: url('img/taebeenbio.jpg'); }
-.project2 { background-image: url('img/noblesse.jpg'); }
-.project3 { background-image: url('img/memoryGame.jpg'); }
-.project4 { background-image: url('img/longines.PNG'); }
-.project5 { background-image: url('img/longines.PNG'); } */
-
 
 .fa-solid {
   margin-top: 0.2rem
@@ -214,24 +200,25 @@ svg {
   display: flex;
   justify-content: center;  
   align-items: center;
-  font-size: 1rem;
+  font-size: 0.9rem;
   font-weight: bold;
-  color: var(--active);
-  margin-top: 4.5rem;
+  margin-top: 2rem;
+  padding: 0.7rem 0.3rem;
+  background-color: var(--active);
+  color: var(--bg);
+  border-radius: 2rem;
 }
 
 .project-wrap a:nth-of-type(2) {
-  display: flex;
-  justify-content: center;  
-  align-items: center;
-  font-size: 0.9rem;
+  font-size: 0.8rem;
   font-weight: bold;
   color: var(--active);
-  margin-top: 9rem;
+  position: absolute;
+  top: 115%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
   border-radius: 1rem;
-  background-color: #1a1a1a;
-  padding: 0.8rem 0.35rem;
-
 }
 
 
@@ -241,7 +228,6 @@ svg {
 #section3 p {
   padding-left: 0.8rem;
 }
-
 
 #section3 p {
   font-size: 1.3rem;
@@ -253,10 +239,9 @@ svg {
   font-size: 1.2rem;
   color: var(--inactive);
   margin-top: 17.3rem;
-  border-bottom: 1px solid var(--inactive);
+  border-bottom: 1.5px solid var(--inactive);
   margin-left: 0.8rem;
 }
-
 
 
 /* 반응형 */
