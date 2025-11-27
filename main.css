@@ -163,9 +163,7 @@ svg {
   background-color: #1a1a1a;
   padding: 0.8rem 0.35rem;
   text-align: center;
-  border: 1.5px solid var(--active);
 }
-
 
 /* 섹션2 */
 
@@ -178,11 +176,6 @@ svg {
   gap: 1.2rem;
   position: relative;
 }
-
-/* .project-wrap h2 {
-  margin: 0;
-  padding: 0.9rem 0.1rem;
-} */
 
 .project-wrap div {
   width: 100%;
@@ -206,21 +199,23 @@ svg {
   padding: 0.7rem 0.3rem;
   background-color: var(--active);
   color: var(--bg);
-  border-radius: 2rem;
+  border-radius: 1rem;
 }
 
 .project-wrap a:nth-of-type(2) {
   font-size: 0.8rem;
   font-weight: bold;
-  color: var(--active);
+  color: var(--inactive);
   position: absolute;
   top: 115%;
   left: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
-  border-radius: 1rem;
 }
 
+.project-wrap a:nth-of-type(2):hover {
+  color: var(--active);
+}
 
 /* 섹션3 */
 
