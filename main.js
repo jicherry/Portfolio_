@@ -1,5 +1,7 @@
 // main.js
 
+const isMobile = window.innerWidth <= 575;
+
 const menuItems = document.querySelectorAll('.menu .item');
 const sections = document.querySelectorAll('section');
 let currentIndex = 0;
@@ -129,3 +131,5 @@ gsap.to("svg", {
   repeat: -1,
   ease: "easeInOut",
 });
+
+

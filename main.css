@@ -13,12 +13,17 @@ html, body {
   overflow: hidden;
   font-family: "Montserrat", sans-serif;
   box-sizing: border-box;
-  max-width: 1500px;
 }
 
 a:not(.visit) {
   text-decoration: none;
-  /* display: block; */
+}
+
+.wrapper {
+  max-width: 1300px;   
+  margin: 0 auto;      
+  padding: 0 1rem;    
+  box-sizing: border-box;
 }
 
 /* 메뉴 */
@@ -92,7 +97,6 @@ svg {
   margin: 0;
   padding: 1.2rem 0.5rem;
   background-color: rgb(27, 52, 195);
-  /* background-color: #EBFF6A; */
   border-radius: 30rem;
 }
 
@@ -125,11 +129,10 @@ svg {
   top: 20%;
   left: 5%;
   width: 100%;
-  max-width: 830px;
+  max-width: 800px;
 }
 
-
-/* 섹션1 */
+/* section1 */
 
 #section1 .section-content {
   display: flex;
@@ -143,7 +146,7 @@ svg {
 
 .text-box > p {
   line-height: 2rem;
-  background-color: #1a1a1a;
+  background-color: #222222;
   border-radius: 1rem;
   padding: 2.2rem 2.5rem;
 }
@@ -160,12 +163,12 @@ svg {
   margin: 0;
   font-weight: bold;
   border-radius: 1rem;
-  background-color: #1a1a1a;
+  background-color: #222222;
   padding: 0.8rem 0.35rem;
   text-align: center;
 }
 
-/* 섹션2 */
+/* section2 */
 
 .project-box h1 {
   padding-left: 0.8rem;
@@ -175,6 +178,7 @@ svg {
   display: flex;
   gap: 1.2rem;
   position: relative;
+  max-width: 1300px;
 }
 
 .project-wrap div {
@@ -182,7 +186,7 @@ svg {
   height: 17rem;
   border-radius: 1.1rem;
   padding: 0 1rem;
-  background-color: #1a1a1a;
+  background-color: #222222;
 }
 
 .fa-solid {
@@ -193,12 +197,11 @@ svg {
   display: flex;
   justify-content: center;  
   align-items: center;
-  font-size: 0.9rem;
+  font-size: 1rem;
   font-weight: bold;
   margin-top: 2rem;
-  padding: 0.7rem 0.3rem;
-  background-color: var(--active);
-  color: var(--bg);
+  padding: 0.6rem 0.2rem;
+  color: var(--active);
   border-radius: 1rem;
 }
 
@@ -217,7 +220,15 @@ svg {
   color: var(--active);
 }
 
-/* 섹션3 */
+.project-wrap p {
+  font-size: 0.7rem;
+  padding: 2.2rem 0.3rem;
+  line-height: 1.6rem;
+  font-weight: 350;
+  color: rgb(179, 179, 179);
+}
+
+/* section3 */
 
 #section3 h1, 
 #section3 p {
@@ -238,30 +249,159 @@ svg {
   margin-left: 0.8rem;
 }
 
-
 /* 반응형 */
 
 @media screen and (max-width: 575.98px) {
-  
-  /* .menu {
-    top: 70%;
-    gap: 0.6rem;
-  } */
 
-
-  svg {
-    display: block;
-    width: 7rem;
-    height: 5rem;
-    padding-bottom: 1.5rem;
+  html, body {
+    /* overflow-y: auto; */
+    height: auto;
   }
 
+  main {
+    height: auto;
+  }
 
-  
-  .visit {
-    font-size: 1rem;  
+  section {
+    min-height: 100vh;
+    height: auto;
+    position: static;
+  }
+
+  .section-content {
+    position: static;
+    width: 100%;
+    max-width: 100%;
+    padding: 2rem 1rem;
+    box-sizing: border-box;
+  }
+
+  .menu {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: auto;
+    transform: none;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    padding: 0.8rem 0;
+    background-color: #000;
+    z-index: 1000;
+  }
+
+  .menu .item {
+    font-size: 0.85rem;
+    transform: none !important;
+    opacity: 1 !important;
+  }
+
+  svg {
+    display: none;
+  }
+
+  /* main */
+
+  #main-section {
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding-left: 0;
+  }
+
+  #main-section h2 {
+    font-size: 8.5rem;
+    transform: translateX(0.2rem);
+  }
+
+  #main-section span {
+    font-size: 2.2rem;
+    padding: 1.8rem 2.2rem;
     display: inline-block;
-    margin-top: 0.2rem;
+  }
+
+  #main-section p {
+    font-size: 0.9rem;
+    line-height: 1.6rem;
+    margin-top: 1.2rem;
+    margin-left: 0.5rem;
+  }
+
+  .visit {
+    margin-left: 0.5rem;
+    margin-top: 0.9rem;
+  }
+
+  /* about */
+
+  #section1 .section-content {
+    flex-direction: column;
+    gap: 1rem;
+    align-items: stretch;
+  }
+
+  .text-box > p {
+    padding: 1.7rem;
+    font-size: 0.7rem;
+  }
+
+  .skills {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 0.9rem;
+    margin-top: 0;
+  }
+
+  .skills p {
+    flex: 1 1 50%;
+    font-size: 0.8rem;
+    padding: 1rem 0;
+  }
+
+  /* projects */
+
+  .project-wrap {
+    flex-direction: column;
+    gap: 1rem;
+    align-items: stretch;
+  }
+
+  .project-wrap div {
+    height: auto;
+    padding: 0.5rem;
+  }
+
+  .project-wrap a:nth-of-type(1) {
+    font-size: 0.8rem;
+    margin-top: 1rem;
+  }
+
+  .project-wrap p {
+    font-size: 0.85rem;
+    line-height: 1.5rem;
+    padding: 1.2rem 0;
+  }
+
+  .project-wrap a:nth-of-type(2) {
+    position: static;
+    transform: none;
+    margin-top: 0.8rem;
+    display: block;
+    text-align: center;
+  }
+
+  /* thanks */
+
+  #section3 p {
+    font-size: 1rem;
+    margin-top: 0.5rem;
+  }
+
+  #section3 h3 {
+    margin-top: 6rem;
+    font-size: 0.9rem;
   }
 
 }
+
