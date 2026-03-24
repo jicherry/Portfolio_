@@ -1,127 +1,39 @@
 <!DOCTYPE html>
-<html lang="ko">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Portfolio</title>
-
-  <link rel="stylesheet" href="main.css">
-  
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
-
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-</head>
-<body>
-  <div class="wrapper">
-    <div class="menu" id="menu">
-      <svg xmlns="http://www.w3.org/2000/svg" width="300" height="230" viewBox="0 0 5 25" fill="none"
-        stroke="currentColor" stroke-width="2" stroke-linecap="butt" stroke-linejoin="miter">
-        <path d="M7 7L17 17M7 17H17V7" />
-      </svg>
-    <div class="item active" data-index="0">HOME</div>
-    <div class="item inactive" data-index="1">ABOUT ME</div>
-    <div class="item inactive" data-index="2">PROJECTS</div>
-    <div class="item inactive" data-index="3">THANKS</div>
-  </div>
-  <main id="container">
-    <section id="main-section">
-      <div class="main-content">
-        <h2>Hello!</h2>
-        <span>I'm Chaebeen</span>
-        <p>I craft digital experiences,<br>
-          turn ideas into reality,<br>
-          solve problems with code,<br>
-          and create memorable interactions. 
-        </p>
-        <a href="https://github.com/jicherry" target="_blank" class="visit">GitHub
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!--폰트-->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Bebas+Neue&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Iosevka+Charon:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&family=Jost:ital,wght@0,100..900;1,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Noto+Sans+KR:wght@100..900&family=Noto+Sans+Mono:wdth,wght@62.5..100,100..900&family=Playwrite+DK+Uloopet+Guides&family=Rock+Salt&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap"
+      rel="stylesheet"
+    />
+    <!--css-->
+    <link rel="stylesheet" href="main.css" />
+    <!--js-->
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/plugin/splitting.min.js"></script>
+    <script src="js/main.js" defer></script>
+  </head>
+  <body>
+    <div class="wrap">
+      <header>
+        <a href="index.html" class="logo">chaeBeen</a>
+        <nav class="gnb">
+          <ul>
+            <li><a href="" data-splitting>ABOUT</a></li>
+            <li><a href="" data-splitting>WORK</a></li>
+            <li><a href="" data-splitting>CONTACT</a></li>
+          </ul>
+        </nav>
+        <a href="" class="menu-open">
+          <span></span>
+          <span></span>
         </a>
-      </div>
-    </section>
-    <section id="section1">
-      <div class="section-content">
-        <div class="text-box">
-        <h1>ABOUT ME</h1>
-          <p>안녕하세요!<br />신입 웹퍼블리셔 지채빈입니다.
-            <br />저는 섬세함과 꼼꼼함을 바탕으로 꾸준히 노력하며,<br />
-            사용자 중심의 사이트를 구현하는데 집중하고 있습니다.<br />
-            그린컴퓨터아카데미에서 웹 개발 양성과정을 수료하였고<br />
-            한국정보교육원에서 웹 프론트엔드 클라우드 콘솔 개발자<br /> 
-            양성과정을 수료하였습니다.
-            </p>
-        </div>
-        <div class="skills">
-          <p>HTML</p>
-          <p>CSS</p>
-          <p>JavaScript</p>
-          <p>jQuery</p>
-          <p>Figma</p>
-        </div>
-      </div>
-    </section>
-
-    <section id="section2">
-      <div class="section-content">
-        <div class="project-box">
-          <h1>PROJECTS</h1>
-          <div class="project-wrap">
-            <div class="project1">
-              <a href="https://taebeen-bio.vercel.app/" target="_blank">태빈바이오<i class="fa-solid fa-circle-right"></i>
-              </a>
-              <p>농업 바이오 기술 기업의 전문성과 신뢰감을 표현한 반응형 웹 퍼블리싱 프로젝트입니다.</p>
-              <a href="https://www.notion.so/emotiondiary-196027017587801a94e2d7932c380814" target="_blank">자세히보기</a>
-            </div>
-            <div class="project2">
-              <a href="https://dunst.vercel.app/" target="_blank">던스트<i class="fa-solid fa-circle-right"></i>
-              </a>
-              <p>
-                브랜드 Dunst 웹사이트를 참고하여, 사용자 인터랙션을 학습 및 구현하기 위한 클론 코딩 프로젝트입니다.
-              </p>
-              <a href="https://www.notion.so/dunst-19602701758780e7a73bc1b8467d6b41?pvs=12" target="_blank">자세히보기</a>
-            </div>
-            
-            <div class="project3">
-              <a href="https://card-game-livid.vercel.app/" target="_blank">메모리게임<i class="fa-solid fa-circle-right"></i>
-              </a>
-              <p>티니핑 캐릭터를 활용하여 만든 
-                간단한 메모리게임입니다.
-              </p>
-              <a href="https://www.notion.so/memorygame-19602701758780e18928dc3c6e90085e" target="_blank">자세히보기</a>
-            </div>
-            <div class="project4">
-              <a href="https://nobless.vercel.app/" target="_blank">노블레스몰<i class="fa-solid fa-circle-right"></i>
-              </a>
-              <p>
-                Noblesse Mall 가구 사이트를 반응형 퍼블리싱한 프로젝트입니다.
-              </p>
-              <a href="https://www.notion.so/nobless-19602701758780bead7dce7260a89d7c"target="_blank" >자세히보기</a>
-            </div>
-            <div class="project5">
-              <!-- <h2>05</h2> -->
-              <a href="#">눈길<i class="fa-solid fa-circle-right"></i>
-              </a>
-              <p>
-                현재 진행중인 프로젝트로 팝업 스토어나 전시회 등 다양한 볼거리의 정보를 제공하는 사이트입니다.
-              </p>
-              <a href="https://knowing-mistake-5c6.notion.site/19602701758780f38b29f5d43b2b1869" target="_blank">자세히보기</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <section id="section3">
-      <div class="section-content">
-        <h1>THANKS</h1>
-        <p>봐주셔서 감사합니다.</p>
-        <h3>©chaebeen</h3>
-      </div>
-    </section>
-  </main>
-  </div>
-
-  <script src="main.js"></script>
-</body>
+      </header>
+    </div>
+  </body>
 </html>
-
