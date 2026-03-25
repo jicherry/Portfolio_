@@ -120,6 +120,11 @@ header {
   /* background-color: rgba(99, 99, 99, 0.324); */
 }
 
+header.motion {
+  animation-name: textAni;
+  animation-duration: 1.2s;
+}
+
 header .logo {
   font-size: 1.7rem;
   font-weight: 500;
@@ -189,18 +194,11 @@ header .menu-open {
 .main.motion .main-text {
   transform: translate3d(0, 0, 0) skewY(0deg);
   overflow: hidden;
-  animation-name: textAni;
-  animation-duration: 1.3s;
-}
-
-.main.motion .main-text h1 {
-  animation-name: textAni;
-  animation-duration: 1.5s;
 }
 
 .main.motion .main-text p {
   animation-name: textAni;
-  animation-duration: 1.2s;
+  animation-duration: 1.3s;
 }
 
 @keyframes textAni {
@@ -223,14 +221,15 @@ header .menu-open {
 }
 
 .main-text p {
-  font-size: 1.5rem;
+  font-size: 1.6rem;
   text-align: center;
   padding-bottom: 3.7rem;
 }
 
 .main-text span {
   font-size: 2rem;
-  animation: bounce 1.3s cubic-bezier(0.2, 0, 0.55, 1) infinite;
+  animation: textAni 1.2s ease forwards,
+    bounce 1.3s cubic-bezier(0.2, 0, 0.55, 1) infinite 1.3s;
   display: block;
   text-align: center;
 }
