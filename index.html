@@ -3,12 +3,16 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>cherryPortfolio</title>
+    <!-- 파비콘 -->
+    <link rel="icon" href="/favicon.ico" />
+    <link rel="icon" type="image/png" sizes="16x16" href="img/favicon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32.png" />
     <!--폰트-->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&family=Jost:ital,wght@0,100..900;1,100..900&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap"
       rel="stylesheet"
     />
     <!--아이콘-->
@@ -22,6 +26,10 @@
     <script src="js/jquery-3.3.1.min.js"></script>
     <script src="js/plugin/splitting.min.js"></script>
     <script src="js/plugin/scrolla.jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="js/plugin/jquery.simplyscroll.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/circletype@2.3.0/dist/circletype.min.js"></script>
     <script src="js/main.js" defer></script>
   </head>
   <body>
@@ -30,26 +38,165 @@
         <a href="index.html" class="logo">CHAEBEEN</a>
         <nav class="gnb">
           <ul>
-            <li><a href="" data-splitting>ABOUT</a></li>
-            <li><a href="" data-splitting>WORK</a></li>
-            <li><a href="" data-splitting>CONTACT</a></li>
+            <li><a href="#about" data-splitting>ABOUT</a></li>
+            <li><a href="#project" data-splitting>PROJECT</a></li>
+            <li><a href="#footer" data-splitting>THANKS</a></li>
           </ul>
         </nav>
-        <a href="" class="menu-open">
-          <span></span>
-          <span></span>
+        <a href="#" class="menu-open">
+          <span class="mbt-t"></span>
+          <span class="mbt-b"></span>
         </a>
       </header>
-      <section class="main animate" data-animate="motion">
+      <!-- main -->
+      <section id="main">
         <div class="main-text">
-          <h1>
-            Think in UI,<br />
-            Build in Code
-          </h1>
-          <p>Web Publisher Chaebeen Portfolio</p>
-          <a href=".main"><span class="lnr lnr-chevron-down"></span></a>
+          <p>
+            <span class="m-t">Details</span><br />
+            <span class="m-m" data-splitting>make the<br /> </span>
+            <span class="m-b" data-splitting>difference.</span>
+          </p>
+          <!-- <a class="arrow" href="#about"><img src="img/arrow.png" alt="" /></a> -->
         </div>
       </section>
+      <!-- about -->
+      <section id="about">
+        <div class="about-bg">
+          <div class="about-txt">
+            <h3 data-splitting>web publisher</h3>
+            <p>
+              안녕하세요! <br />
+              웹 퍼블리셔 지채빈 입니다.<br />
+              그린컴퓨터아카데미에서 웹 개발 양성과정을 수료하였으며,<br />
+              한국정보교육원에서 웹 프론트엔드 및 클라우드 콘솔 개발자 과정을
+              통해 역량을 강화했습니다.<br />
+              저는 섬세함과 꼼꼼함을 바탕으로 꾸준히 성장해 나가며<br />
+              사용자 중심의 웹 환경 구현에 집중하고 있습니다.<br />
+              사용자가 직관적으로 이해하고 편리하게 사용할 수 있는 화면 구현을
+              목표로 작업하고 있습니다.
+            </p>
+          </div>
+        </div>
+      </section>
+      <section id="skill">
+        <div class="skill-wrap">
+          <ul data-splitting>
+            <li># HTML</li>
+            <li># CSS</li>
+            <li># JAVASCRIPT</li>
+            <li># JQUERY</li>
+            <li># REACT</li>
+            <li># FIGMA</li>
+          </ul>
+        </div>
+        <ul class="skill-img">
+          <li><img src="img/taebeenbio.png" alt="" /></li>
+          <li><img src="img/dunst.png" alt="" /></li>
+          <li><img src="img/teenieping.png" alt="" /></li>
+          <li><img src="img/emotion.png" alt="" /></li>
+          <li><img src="img/noblesse.png" alt="" /></li>
+          <li><img src="img/popup.png" alt="" /></li>
+        </ul>
+      </section>
+      <!-- project -->
+      <section id="project">
+        <div class="project-inner">
+          <div class="project-title">
+            <p class="p-top">MY</p>
+            <p class="p-btm">PROJECT</p>
+          </div>
+          <ul class="project-list">
+            <li>
+              <a href="https://taebeen-bio.vercel.app/" target="_blank">
+                <div class="project-img">
+                  <img src="img/taebeenbio.png" alt="" />
+                </div>
+                <div class="project-txt">
+                  <h3>태빈바이오</h3>
+                  <p>web publinsing</p>
+                </div>
+              </a>
+            </li>
+            <li>
+              <a href="https://dunst.vercel.app/" target="_blank">
+                <div class="project-img">
+                  <img src="img/dunst.png" alt="" />
+                </div>
+                <div class="project-txt">
+                  <h3>던스트</h3>
+                  <p>web publinsing</p>
+                </div>
+              </a>
+            </li>
+            <li>
+              <a href="https://card-game-livid.vercel.app/" target="_blank">
+                <div class="project-img">
+                  <img src="img/teenieping.png" alt="" />
+                </div>
+                <div class="project-txt">
+                  <h3>캐치 티니핑</h3>
+                  <p>web publinsing</p>
+                </div>
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://emotiondiary-cheabeens-projects.vercel.app/"
+                target="_blank"
+              >
+                <div class="project-img">
+                  <img src="img/emotion.png" alt="" />
+                </div>
+                <div class="project-txt">
+                  <h3>감정일기장</h3>
+                  <p>web publinsing</p>
+                </div>
+              </a>
+            </li>
+            <li>
+              <a href="https://nobless.vercel.app/" target="_blank">
+                <div class="project-img">
+                  <img src="img/noblesse.png" alt="" />
+                </div>
+                <div class="project-txt">
+                  <h3>노블레스몰</h3>
+                  <p>web publinsing</p>
+                </div>
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://www.notion.so/19602701758780f38b29f5d43b2b1869"
+                target="_blank"
+              >
+                <div class="project-img">
+                  <img src="img/popup.png" alt="" />
+                </div>
+                <div class="project-txt">
+                  <h3>눈길</h3>
+                  <p>web publinsing</p>
+                </div>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </section>
+      <footer id="footer">
+        <div class="footer-wrap">
+          <p class="title">소중한 시간 내어 봐주셔서 감사합니다.</p>
+          <div class="contact">
+            <p data-splitting>CONTACT</p>
+            <p data-splitting>
+              <a href="mailto:cjstkeldkdl0@naver.com">
+                cjstkeldkdl0@naver.com</a
+              >
+            </p>
+          </div>
+        </div>
+        <div class="footer-btm">
+          <p>chaebeen &#169; 2026</p>
+        </div>
+      </footer>
     </div>
   </body>
 </html>

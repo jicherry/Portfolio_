@@ -1,12 +1,22 @@
-/* Reset */
+@font-face {
+  font-family: "Holly Berry";
+  src: url("/font/HollyBerryPop-PVxdZ.otf") format("opentype"),
+    url("/font/HollyBerryPop-LVxvE.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: block;
+}
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Jost", sans-serif;
   user-select: none;
+  font-family: "Holly Berry", sans-serif;
 }
+
+/* Reset */
+
 html,
 body,
 div,
@@ -93,16 +103,19 @@ button {
   --text-color: #fff;
 }
 
-body {
-  background-color: var(--main-color);
+html {
+  scroll-behavior: smooth;
+}
+
+.char {
+  display: inline-block;
 }
 
 .wrap {
   position: relative;
   margin: 0 auto;
-  overflow: hidden;
-  background-color: var(--main-color);
   color: var(--text-color);
+  background-color: var(--main-color);
 }
 
 /* header */
@@ -113,11 +126,11 @@ header {
   left: 0;
   top: 0;
   z-index: 100;
-  padding: 1.3rem 2.5rem;
+  padding: 1.3rem 2rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  /* background-color: rgba(99, 99, 99, 0.324); */
+  background-color: transparent;
 }
 
 header.motion {
@@ -126,22 +139,18 @@ header.motion {
 }
 
 header .logo {
-  font-size: 1.7rem;
-  font-weight: 500;
-}
-
-header .gnb {
-  /* line-height: 1; */
-  margin-top: 0.5rem;
+  font-size: 1.8rem;
+  letter-spacing: -0.15rem;
 }
 
 header .gnb ul {
   display: flex;
-  gap: 1.5rem;
+  gap: 1.6rem;
 }
 
 header ul li a {
   display: block;
+  font-size: 1.1rem;
 }
 
 header .menu-open {
@@ -164,10 +173,9 @@ header .menu-open {
   position: absolute;
   top: 0;
   left: 0;
-  opacity: 0.5;
   color: var(--text-color);
   transition: transform 0.3s;
-  /* transition-delay: calc(30ms * var(--char-index)); */
+  transition-delay: calc(30ms * var(--char-index));
 }
 
 .gnb ul li a .char::before {
@@ -176,7 +184,6 @@ header .menu-open {
 
 .gnb ul li a:hover .char::before {
   transform: translateY(0%);
-  opacity: 1;
 }
 
 .gnb ul li a:hover .char::after {
@@ -185,62 +192,741 @@ header .menu-open {
 
 /* main */
 
-.main {
+#main {
   width: 100%;
   height: 100vh;
-  padding-top: 11rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-left: 0.5rem;
+  padding-top: 2rem;
 }
 
-.main.motion .main-text {
-  transform: translate3d(0, 0, 0) skewY(0deg);
+.main-text .char {
+  display: inline-block;
+  transform: translateY(-200px);
+  opacity: 0;
+}
+
+.main-text .m-t {
+  font-size: 11.5rem;
+  font-weight: bold;
+  display: block;
+  line-height: 0.3;
+  /* font-family: "Roboto", sans-serif; */
+  transform: translateX(1rem);
+}
+
+.main-text .m-m {
+  -webkit-text-stroke: 1px var(--text-color);
+  color: var(--main-color);
+  font-size: 10.7rem;
+  display: block;
+  letter-spacing: -0.7rem;
+  line-height: 0.8;
+}
+
+.main-text .m-b {
+  -webkit-text-stroke: 1px var(--text-color);
+  color: var(--main-color);
+  font-size: 9.7rem;
+  display: block;
+  letter-spacing: -1.2rem;
+  line-height: 0.5;
+}
+
+/* about */
+
+#about {
+  width: 100%;
+  height: 100vh;
+  background-color: var(--main-color);
+  position: relative;
+}
+
+.about-bg {
+  position: absolute;
+  inset: 0;
+  background: var(--main-color);
+  clip-path: inset(50% 50% 50% 50% round 30%);
+  z-index: 1;
+}
+
+.about-txt {
+  position: absolute;
+  top: 30%;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 5rem;
+  color: var(--text-color);
+}
+
+.about-txt h3 {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.about-txt p {
+  line-height: 2;
+  font-size: 1rem;
+  font-family: "Roboto", sans-serif;
+}
+
+/* skill */
+
+#skill {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+  margin-top: -4rem;
+}
+
+.skill-wrap {
+  width: 70%;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+}
+
+.skill-wrap ul li {
+  font-size: 3rem;
+  line-height: 1.7;
+}
+
+.skill-img img {
+  width: 12rem;
+  height: 17rem;
+  object-fit: cover;
+  display: block;
+}
+
+.simply-scroll .simply-scroll-clip {
+  overflow: hidden;
+  transform: rotate(5deg) scale(1.1);
+  margin-top: 220px;
+}
+
+.simply-scroll .simply-scroll-clip .simply-scroll-list li {
+  float: left;
+  width: 400px;
+  filter: brightness(50%);
+}
+
+.simply-scroll .simply-scroll-clip .simply-scroll-list li img {
+  width: 100%;
+}
+
+/* project */
+
+#project {
   overflow: hidden;
 }
 
-.main.motion .main-text p {
-  animation-name: textAni;
-  animation-duration: 1.3s;
+.project-inner {
+  position: relative;
 }
 
-@keyframes textAni {
-  0% {
-    opacity: 0;
-  }
-
-  30% {
-    opacity: 0;
-    transform: translate3d(0, -180px, 0) skewY(0deg);
-    transform-origin: top;
-  }
-}
-
-.main-text h1 {
-  font-family: "Orbitron", sans-serif;
-  font-size: 5.2rem;
+.project-title {
+  width: 100%;
+  height: 100vh;
+  font-size: 7rem;
+  line-height: 0.9;
   text-align: center;
-  padding-bottom: 0.7rem;
+  position: relative;
+  z-index: 1;
+  padding-top: 5rem;
 }
 
-.main-text p {
-  font-size: 1.6rem;
-  text-align: center;
-  padding-bottom: 3.7rem;
+.project-list {
+  width: 70%;
+  margin: 0 auto;
+  margin-top: -15rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  position: relative;
+  z-index: 2;
 }
 
-.main-text span {
-  font-size: 2rem;
-  animation: textAni 1.2s ease forwards,
-    bounce 1.3s cubic-bezier(0.2, 0, 0.55, 1) infinite 1.3s;
+.project-list li {
+  width: 45%;
+  margin-top: 3.5rem;
+}
+
+.project-list li:nth-child(2n) {
+  margin-top: 0;
+}
+
+.project-list li a {
   display: block;
-  text-align: center;
 }
 
-@keyframes bounce {
-  0%,
-  100% {
-    transform: translateY(0);
+.project-list li a img {
+  width: 100%;
+  object-fit: cover;
+}
+
+.project-list li a .project-txt h3 {
+  font-size: 1.3rem;
+  font-weight: bold;
+  margin: 0.5rem 0;
+  font-family: "Roboto", sans-serif;
+}
+
+.project-list li a .project-txt p {
+  color: #888;
+  font-size: 1rem;
+}
+
+/* project - hover 효과 */
+
+.project-list li a .project-img {
+  position: relative;
+}
+
+.project-list li a .project-img::before {
+  content: "";
+  width: 5rem;
+  height: 5rem;
+  border-radius: 100%;
+  border: 1px solid var(--text-color);
+  background: url(img/arrow-back.png) no-repeat center/ 1.5rem;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%) rotate(50deg);
+  z-index: 1;
+  transition: all 0.3s;
+  opacity: 0;
+}
+
+.project-list li a .project-img::after {
+  content: "";
+  width: 0;
+  height: 0;
+  border-radius: 100%;
+  background: var(--text-color) url(img/circle-front.png) no-repeat center/ 5rem;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  transition: 0.3s;
+  animation-name: spin;
+  animation-duration: 10s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  -webkit-animation-name: spin;
+  -webkit-animation-duration: 10s;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-timing-function: linear;
+  z-index: 1;
+}
+
+@keyframes spin {
+  0% {
+    transform: translate(-50%, -50%) rotate(0);
   }
 
-  50% {
-    transform: translateY(-8px);
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+@-webkit-keyframes spin {
+  0% {
+    transform: translate(-50%, -50%) rotate(0);
+  }
+
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+.project-list li a:hover .project-img img {
+  filter: brightness(0.5);
+}
+
+.project-list li a:hover .project-img::before {
+  opacity: 1;
+  z-index: 20;
+}
+
+.project-list li a:hover .project-img::after {
+  width: 5rem;
+  height: 5rem;
+}
+
+/* footer */
+
+footer {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+}
+
+footer .footer-wrap {
+  width: 100%;
+  position: absolute;
+  top: 30%;
+  padding: 0 2rem;
+}
+
+footer .footer-wrap .title {
+  font-family: "Roboto", sans-serif;
+  font-size: 2rem;
+  margin-bottom: 3rem;
+}
+
+footer .footer-wrap .contact p {
+  font-size: 6.3rem;
+  line-height: 1;
+}
+
+footer .footer-wrap .contact a {
+  font-size: 5.3rem;
+  letter-spacing: -0.35rem;
+}
+
+footer .footer-wrap .contact a,
+footer .footer-wrap .contact a .char {
+  font-family: "Roboto", sans-serif;
+}
+
+footer .footer-btm {
+  position: absolute;
+  bottom: 5%;
+  width: 100%;
+  padding: 0 2rem;
+  font-size: 1.2rem;
+}
+
+/* reseponsiveWeb */
+/* pc 1650 - 1301px */
+@media screen and (max-width: 1650px) {
+  /* header */
+  header .logo {
+    font-size: 1.8rem;
+    letter-spacing: -0.2rem;
+  }
+
+  header ul li a {
+    font-size: 1.2rem;
+  }
+
+  /* main */
+  .main-text .m-t {
+    font-size: 11.6rem;
+  }
+
+  .main-text .m-m {
+    font-size: 10.8rem;
+    line-height: 0.8;
+  }
+
+  .main-text .m-b {
+    font-size: 9.8rem;
+    letter-spacing: -1.25rem;
+    line-height: 0.5;
+  }
+
+  /* about */
+  .about-txt h3 {
+    font-size: 2.1rem;
+    font-weight: bold;
+  }
+
+  .about-txt p {
+    line-height: 2;
+    font-size: 1rem;
+    font-family: "Roboto", sans-serif;
+  }
+
+  /* skill */
+  .simply-scroll .simply-scroll-clip {
+    margin-top: 230px;
+  }
+
+  /* project */
+
+  /* footer */
+  footer .footer-wrap .title {
+    font-size: 2.2rem;
+    margin-bottom: 5rem;
+  }
+
+  footer .footer-wrap .contact p {
+    line-height: 0.8;
+  }
+}
+
+/* 1024 - 801px */
+@media screen and (max-width: 1024px) {
+  /* header */
+  header .logo {
+    font-size: 1.7rem;
+    letter-spacing: -0.2rem;
+  }
+  header ul li a {
+    font-size: 1.1rem;
+  }
+
+  /* main */
+  .main-text .m-t {
+    font-size: 10.3rem;
+  }
+
+  .main-text .m-m {
+    font-size: 9.7rem;
+    line-height: 0.8;
+  }
+
+  .main-text .m-b {
+    font-size: 9rem;
+    letter-spacing: -1.25rem;
+    line-height: 0.5;
+  }
+
+  /* about */
+  .about-txt h3 {
+    font-size: 1.2rem;
+    font-weight: bold;
+  }
+
+  .about-txt p {
+    font-size: 0.75rem;
+  }
+
+  /* skill */
+  .skill-wrap ul li {
+    font-size: 2.5rem;
+    line-height: 1.7;
+  }
+
+  .simply-scroll .simply-scroll-clip {
+    margin-top: 13rem;
+  }
+
+  /* project */
+  .project-title {
+    font-size: 7rem;
+  }
+
+  .project-list li a .project-txt h3 {
+    font-size: 1.1rem;
+  }
+
+  .project-list li a .project-txt p {
+    font-size: 0.8rem;
+  }
+
+  .project-list li a .project-img::before,
+  .project-list li a .project-img::after {
+    display: none;
+  }
+
+  /* footer */
+  footer .footer-wrap .title {
+    font-size: 1.9rem;
+    margin-bottom: 5.2rem;
+  }
+
+  footer .footer-wrap .contact p {
+    font-size: 6rem;
+  }
+
+  footer .footer-wrap .contact a {
+    font-size: 4.6rem;
+    letter-spacing: -0.4rem;
+  }
+
+  footer .footer-btm {
+    font-size: 1.1rem;
+  }
+}
+
+/* 800 - 501px */
+@media screen and (max-width: 800px) {
+  /* header */
+  header .menu-open {
+    display: block;
+    position: relative;
+    width: 2rem;
+    height: 10px;
+    transition: top 0.5s;
+    z-index: 101;
+  }
+
+  header .menu-open .mbt-t {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: var(--text-color);
+    transition: 0.3s;
+  }
+
+  header .menu-open .mbt-b {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: var(--text-color);
+    transition: 0.3s;
+  }
+
+  .gnb {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    left: 0;
+    top: -100%;
+    background-color: var(--text-color);
+    color: var(--main-color);
+    z-index: 100;
+    transition: top 0.5s;
+  }
+
+  .gnb ul {
+    flex-direction: column;
+    width: 82%;
+    margin: 25% auto;
+  }
+
+  .gnb ul li {
+    margin-left: 0;
+  }
+
+  .gnb ul li a {
+    font-size: 3.3rem;
+    line-height: 1.2;
+  }
+
+  .gnb ul li a .char {
+    color: var(--main-color);
+  }
+
+  .gnb ul li a .char::before,
+  .gnb ul li a .char::after {
+    display: none;
+  }
+
+  .gnb.on {
+    width: 100%;
+    height: 100vh;
+    top: 0;
+  }
+
+  body.on {
+    overflow: hidden;
+  }
+
+  header .menu-open.on .mbt-t {
+    background-color: var(--main-color);
+    transform: rotate(45deg) translate(5px, 5px);
+  }
+
+  header .menu-open.on .mbt-b {
+    background-color: var(--main-color);
+    transform: rotate(-45deg) translate(0.5px, -0.5px);
+  }
+
+  header .logo {
+    font-size: 1.5rem;
+  }
+
+  /* main */
+  .main-text .m-t {
+    font-size: 6.3rem;
+    transform: translateX(0.3rem);
+  }
+
+  .main-text .m-m {
+    font-size: 6.3rem;
+    line-height: 0.7;
+  }
+
+  .main-text .m-b {
+    font-size: 5.2rem;
+    letter-spacing: -0.6rem;
+    line-height: 0.7;
+  }
+
+  /* about */
+  .about-txt {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5rem;
+  }
+
+  .about-txt h3 {
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+
+  .about-txt p {
+    font-size: 0.69rem;
+    flex-wrap: wrap;
+  }
+
+  /* skill */
+  .skill-img img {
+    width: 10rem;
+    height: 15rem;
+  }
+
+  .simply-scroll .simply-scroll-clip {
+    margin-top: 13rem;
+  }
+
+  .skill-wrap ul li {
+    font-size: 2.2rem;
+    line-height: 1.8;
+  }
+
+  /* project */
+
+  .project-title {
+    font-size: 5.1rem;
+  }
+
+  .project-list li {
+    width: 100%;
+  }
+
+  .project-list li:nth-child(2n) {
+    margin-top: 3.5rem;
+  }
+
+  .project-list li a .project-txt h3 {
+    font-size: 0.9rem;
+  }
+  .project-list li a .project-txt p {
+    font-size: 0.7rem;
+  }
+
+  /* footer */
+  footer .footer-wrap .title {
+    font-size: 1.5rem;
+  }
+
+  footer .footer-wrap .contact p {
+    font-size: 4.2rem;
+  }
+
+  footer .footer-wrap .contact a {
+    font-size: 2.9rem;
+    letter-spacing: -0.3rem;
+  }
+
+  footer .footer-btm {
+    font-size: 1rem;
+  }
+}
+
+/* 500 - 401px */
+@media screen and (max-width: 500px) {
+  /* header */
+  header .logo {
+    font-size: 1.3rem;
+  }
+
+  .gnb ul li a {
+    font-size: 2.3rem;
+    line-height: 2;
+  }
+
+  /* main */
+  .main-text .m-t {
+    font-size: 4.8rem;
+    transform: translateX(0.1rem);
+  }
+
+  .main-text .m-m {
+    font-size: 5.2rem;
+    line-height: 0.5;
+  }
+
+  .main-text .m-b {
+    font-size: 4rem;
+    letter-spacing: -0.4rem;
+    line-height: 0.85;
+  }
+
+  /* about */
+  .about-txt {
+    position: absolute;
+    top: 39%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5rem;
+  }
+
+  .about-txt h3 {
+    font-size: 1.2rem;
+    font-weight: bold;
+  }
+
+  .about-txt p {
+    font-size: 0.6rem;
+    flex-wrap: wrap;
+  }
+
+  /* skill */
+  .skill-wrap ul li {
+    font-size: 1.8rem;
+    line-height: 1.8;
+  }
+
+  .skill-img img {
+    width: 10rem;
+    height: 10rem;
+  }
+
+  .simply-scroll .simply-scroll-clip {
+    margin-top: 15rem;
+  }
+
+  /* project */
+  .project-title {
+    font-size: 3.9rem;
+  }
+
+  .project-list li a .project-txt h3 {
+    font-size: 1rem;
+  }
+
+  .project-list li a .project-txt p {
+    font-size: 0.8rem;
+  }
+
+  /* footer */
+  footer .footer-wrap .title {
+    font-size: 1.2rem;
+  }
+
+  footer .footer-wrap .contact p {
+    font-size: 2.5rem;
+  }
+
+  footer .footer-wrap .contact a {
+    font-size: 2.1rem;
+    letter-spacing: -0.2rem;
+    line-height: 1.5;
+  }
+
+  footer .footer-btm {
+    font-size: 1rem;
   }
 }
